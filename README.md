@@ -40,11 +40,12 @@ NetworkTypeNotSupported: Network type DUAL isn't supported.
 
 ## Architecture
 
-The architecture diagram (with official AWS icons) is in
+![Architecture diagram](docs/architecture.drawio.png)
+
+The editable source (with official AWS icons) is in
 [`docs/architecture.drawio`](docs/architecture.drawio). Open it at
 [app.diagrams.net](https://app.diagrams.net), or with the draw.io desktop app or the
-draw.io VS Code extension. To display it inline on GitHub, export it to PNG/SVG
-(`docs/architecture.png`) from draw.io and reference that image here.
+draw.io VS Code extension.
 
 Flow:
 
