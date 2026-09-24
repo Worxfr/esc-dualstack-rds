@@ -38,6 +38,23 @@ NetworkTypeNotSupported: Network type DUAL isn't supported.
 
 `--network-type IPV4` is accepted. So IPv6 clients cannot connect directly to RDS.
 
+## Architecture
+
+The architecture diagram (with official AWS icons) is in
+[`docs/architecture.drawio`](docs/architecture.drawio). Open it at
+[app.diagrams.net](https://app.diagrams.net), or with the draw.io desktop app or the
+draw.io VS Code extension. To display it inline on GitHub, export it to PNG/SVG
+(`docs/architecture.png`) from draw.io and reference that image here.
+
+Flow:
+
+```
+IPv6-only client ──TLS over IPv6──▶ RDS Proxy (EndpointNetworkType=DUAL)
+                                        │ IPv4 (TargetConnectionNetworkType=IPV4)
+                                        ▼
+                                    RDS PostgreSQL (NetworkType=IPV4, encrypted)
+```
+
 ## The solution
 
 A **dual-stack RDS Proxy** sits in front of the IPv4 database. The proxy accepts IPv6
