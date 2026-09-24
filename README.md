@@ -47,15 +47,6 @@ The editable source (with official AWS icons) is in
 [app.diagrams.net](https://app.diagrams.net), or with the draw.io desktop app or the
 draw.io VS Code extension.
 
-Flow:
-
-```
-IPv6-only client ──TLS over IPv6──▶ RDS Proxy (EndpointNetworkType=DUAL)
-                                        │ IPv4 (TargetConnectionNetworkType=IPV4)
-                                        ▼
-                                    RDS PostgreSQL (NetworkType=IPV4, encrypted)
-```
-
 ## The solution
 
 A **dual-stack RDS Proxy** sits in front of the IPv4 database. The proxy accepts IPv6
